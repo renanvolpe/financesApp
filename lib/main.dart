@@ -1,3 +1,4 @@
+import 'package:finances_app/core/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      routerConfig:  router,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
