@@ -1,5 +1,6 @@
 import 'package:finances_app/core/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -22,7 +23,10 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Light or Dark"),
+                Text(
+                  "Light or Dark",
+                  style: TextStyle(color: ColorsFinancial.color1),
+                ),
                 Switch(
                     value: darkTheme,
                     onChanged: (value) => setState(() {
@@ -115,7 +119,9 @@ class _LoginPageState extends State<LoginPage> {
               height: 15,
             ),
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push("/home");
+                },
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   width: MediaQuery.of(context).size.width,
@@ -123,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: ColorsFinancial.blue2,
                       borderRadius: BorderRadius.circular(20)),
                   child: const Text(
-                    "Sign up",
+                    "Sign in",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white),
                   ),
@@ -138,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.white,
                 ),
                 Text(
-                  "or continue with",
+                  "or sign Up here",
                   style: TextStyle(color: ColorsFinancial.color1),
                 )
               ],
