@@ -9,9 +9,30 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool darkTheme = true;
+  late ColorsFinancial colorsFinancial;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: ColorsFinancial.backgroundColor,
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Light or Dark"),
+                Switch(
+                    value: darkTheme,
+                    onChanged: (value) => setState(() {
+                          darkTheme = value;
+                          ColorsFinancial(darkTheme);
+                        }))
+              ],
+            ),
+          ]),
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: ColorsFinancial.backgroundColor,
         // color: Colors.white,
@@ -21,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 120,
+              height: 80,
             ),
             const FlutterLogo(
               size: 100,
@@ -31,21 +52,21 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Text(
               "Daily financial",
-              style: TextStyle(fontSize: 28, color: ColorsFinancial.grey1),
+              style: TextStyle(fontSize: 28, color: ColorsFinancial.color1),
             ),
             const SizedBox(
               height: 30,
             ),
             TextFormField(
               decoration: InputDecoration(
-                  fillColor: ColorsFinancial.grey3,
+                  fillColor: ColorsFinancial.color3,
                   prefixIcon: Icon(
                     Icons.email,
-                    color: ColorsFinancial.grey1,
+                    color: ColorsFinancial.color1,
                   ),
                   filled: true,
                   hintText: "E-mail",
-                  hintStyle: TextStyle(color: ColorsFinancial.grey1),
+                  hintStyle: TextStyle(color: ColorsFinancial.color1),
                   border: OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(14))),
@@ -55,14 +76,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                  fillColor: ColorsFinancial.grey3,
+                  fillColor: ColorsFinancial.color3,
                   prefixIcon: Icon(
                     Icons.lock,
-                    color: ColorsFinancial.grey1,
+                    color: ColorsFinancial.color1,
                   ),
                   filled: true,
                   hintText: "Password",
-                  hintStyle: TextStyle(color: ColorsFinancial.grey1),
+                  hintStyle: TextStyle(color: ColorsFinancial.color1),
                   border: OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(14))),
@@ -79,13 +100,13 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(5)),
                   value: true,
                   onChanged: (value) {},
-                  checkColor: ColorsFinancial.grey1,
+                  checkColor: ColorsFinancial.color1,
                 ),
-                const Text(
+                Text(
                   "Remember me",
                   style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white,
+                      color: ColorsFinancial.color1,
                       fontWeight: FontWeight.w400),
                 ),
               ],
@@ -118,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Text(
                   "or continue with",
-                  style: TextStyle(color: ColorsFinancial.grey1),
+                  style: TextStyle(color: ColorsFinancial.color1),
                 )
               ],
             ),
@@ -132,9 +153,9 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                     child: Container(
                         decoration: BoxDecoration(
-                            color: ColorsFinancial.grey3,
+                            color: ColorsFinancial.color3,
                             border: Border.all(
-                                color: ColorsFinancial.grey1, width: 0.3),
+                                color: ColorsFinancial.color1, width: 0.3),
                             borderRadius: BorderRadius.circular(20)),
                         padding: const EdgeInsets.all(15),
                         child: Icon(
@@ -146,9 +167,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 15),
                         decoration: BoxDecoration(
-                            color: ColorsFinancial.grey3,
+                            color: ColorsFinancial.color3,
                             border: Border.all(
-                                color: ColorsFinancial.grey1, width: 0.3),
+                                color: ColorsFinancial.color1, width: 0.3),
                             borderRadius: BorderRadius.circular(20)),
                         padding: const EdgeInsets.all(15),
                         child: Icon(
@@ -159,9 +180,9 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                     child: Container(
                         decoration: BoxDecoration(
-                            color: ColorsFinancial.grey3,
+                            color: ColorsFinancial.color3,
                             border: Border.all(
-                                color: ColorsFinancial.grey1, width: 0.3),
+                                color: ColorsFinancial.color1, width: 0.3),
                             borderRadius: BorderRadius.circular(20)),
                         padding: const EdgeInsets.all(15),
                         child: Icon(
