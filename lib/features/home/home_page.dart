@@ -1,3 +1,4 @@
+import 'package:finances_app/core/colors.dart';
 import 'package:finances_app/features/home/home_cash_outflow.dart';
 import 'package:finances_app/features/home/home_deposit.dart';
 import 'package:finances_app/features/home/home_resume.dart';
@@ -20,15 +21,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> _children = [
-    HomeCashOutflow(),
+    const HomeResume(),
     HomeDeposit(),
-    HomeResume(),
+    HomeCashOutflow(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: ColorsFinancial.color1,
+        backgroundColor: ColorsFinancial.backgroundColor,
+        selectedItemColor: ColorsFinancial.blue1,
+        //selectedItemColor: ColorsFinancial.backgroundColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -44,7 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: widget.selectedIndex,
-        selectedItemColor: Colors.amber[800],
+
         onTap: _onItemTapped,
       ),
       body: _children[widget.selectedIndex],
