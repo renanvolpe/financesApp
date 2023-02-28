@@ -1,7 +1,7 @@
 import 'package:finances_app/core/colors.dart';
-import 'package:finances_app/features/home/home_cash_outflow.dart';
-import 'package:finances_app/features/home/home_deposit.dart';
-import 'package:finances_app/features/home/home_resume.dart';
+import 'package:finances_app/features/home/pages/home_cash_outflow.dart';
+import 'package:finances_app/features/home/pages/home_deposit.dart';
+import 'package:finances_app/features/home/pages/home_resume.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
