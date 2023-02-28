@@ -7,6 +7,7 @@ class ColorsFinancial {
     startColor();
   }
   static late Color backgroundColor;
+  static late Color color0;
   static late Color color1;
   static late Color color2;
   static late Color color3;
@@ -19,12 +20,14 @@ class ColorsFinancial {
 
   //darkTheme
   Color darkBackgroundColor = const Color(0xff181a20);
+  Color dark0 = Colors.white;
   Color dark1 = const Color(0xff9c9e9f);
   Color dark2 = const Color(0xff525252);
   Color dark3 = const Color(0xff1f222a);
 
   //lightTheme
   Color lightBackgroundColor = Colors.white;
+  Color light0 = Colors.black;
   Color light1 = const Color(0xff202021);
   Color light3 = const Color(0xfffafafa);
 
@@ -38,6 +41,7 @@ class ColorsFinancial {
 
   void setDarkTheme() {
     backgroundColor = darkBackgroundColor;
+    color0 = dark0;
     color1 = dark1;
     color2 = dark2;
     color3 = dark3;
@@ -45,6 +49,7 @@ class ColorsFinancial {
 
   void setLightTheme() {
     backgroundColor = lightBackgroundColor;
+    color0 = light0;
     color1 = light1;
     color2 = dark2;
     color3 = light3;
